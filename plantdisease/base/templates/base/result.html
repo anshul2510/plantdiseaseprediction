@@ -1,0 +1,203 @@
+{% extends 'main.html' %}
+
+{% block body %}
+<div class="custom-container text-center">
+{% if context_x %}
+    <h2 class="mt-3">Result :</h2>
+    <h3 class="mt-3">As per Xception Network :</h3>
+    
+    {% if context_x.label|lower == 'potato___late_blight' %}
+         <p>This is a potato plant with Late blight disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'potato___early_blight' %}
+         <p>This is a potato plant with Early blight disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'potato___healthy' %}
+         <p>This is a healthy potato plant with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato_healthy' %}
+         <p>This is a healthy tomato plant with the confidence of {{ context_x.confidence }}</p> 
+    {% elif context_x.label|lower == 'tomato__tomato_yellowleaf__curl_virus' %}
+         <p>This is a tomato plant with yellow leaf curl virus with the confidence of {{ context_x.confidence }}</p> 
+    {% elif context_x.label|lower == 'tomato_late_blight' %}
+         <p>This is a tomato plant with late blight disease with the confidence of {{ context_x.confidence }}</p> 
+    {% elif context_x.label|lower == 'tomato_early_blight' %}
+         <p>This is a tomato plant with early blight disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato_bacterial_spot' %}
+         <p>This is a tomato plant with bacterial spot disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato_leaf_mold' %}
+         <p>This is a tomato plant with leaf mold disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato_spider_mites_two_spotted_spider_mite' %}
+         <p>This is a tomato plant with spider mites disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato__tomato_mosaic_virus' %}
+         <p>This is a tomato plant with mosaic virus disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato_septoria_leaf_spot' %}
+         <p>This is a tomato plant with septoria leaf spot disease with the confidence of {{ context_x.confidence }}</p>
+    {% elif context_x.label|lower == 'tomato__target_spot' %}
+         <p>This is a tomato plant with target spot disease with the confidence of {{ context_x.confidence }}</p>
+    {% endif %}
+    
+                  
+
+
+{% endif %}
+
+
+
+
+
+{% if context_d %}
+<h3 class="mt-3">As per densenet Network :</h3>
+    
+{% if context_d.label|lower == 'potato___late_blight' %}
+     <p>This is a potato plant with Late blight disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'potato___early_blight' %}
+     <p>This is a potato plant with Early blight disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'potato___healthy' %}
+     <p>This is a healthy potato plant with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato_healthy' %}
+     <p>This is a healthy tomato plant with the confidence of {{ context_d.confidence }}</p> 
+{% elif context_d.label|lower == 'tomato__tomato_yellowleaf__curl_virus' %}
+     <p>This is a tomato plant with yellow leaf curl virus with the confidence of {{ context_d.confidence }}</p> 
+{% elif context_d.label|lower == 'tomato_late_blight' %}
+     <p>This is a tomato plant with late blight disease with the confidence of {{ context_d.confidence }}</p> 
+{% elif context_d.label|lower == 'tomato_early_blight' %}
+     <p>This is a tomato plant with early blight disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato_bacterial_spot' %}
+     <p>This is a tomato plant with bacterial spot disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato_leaf_mold' %}
+     <p>This is a tomato plant with leaf mold disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato_spider_mites_two_spotted_spider_mite' %}
+     <p>This is a tomato plant with spider mites disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato__tomato_mosaic_virus' %}
+     <p>This is a tomato plant with mosaic virus disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato_septoria_leaf_spot' %}
+     <p>This is a tomato plant with septoria leaf spot disease with the confidence of {{ context_d.confidence }}</p>
+{% elif context_d.label|lower == 'tomato__target_spot' %}
+     <p>This is a tomato plant with target spot disease with the confidence of {{ context_d.confidence }}</p>
+{% endif %}
+
+              
+{% endif %}
+
+
+
+
+
+
+{% if context_g %}
+<h3 class="mt-3">As per googlenet Network :</h3>
+    
+{% if context_g.label|lower == 'potato___late_blight' %}
+     <p>This is a potato plant with Late blight disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'potato___early_blight' %}
+     <p>This is a potato plant with Early blight disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'potato___healthy' %}
+     <p>This is a healthy potato plant with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato_healthy' %}
+     <p>This is a healthy tomato plant with the confidence of {{ context_g.confidence }}</p> 
+{% elif context_g.label|lower == 'tomato__tomato_yellowleaf__curl_virus' %}
+     <p>This is a tomato plant with yellow leaf curl virus with the confidence of {{ context_g.confidence }}</p> 
+{% elif context_g.label|lower == 'tomato_late_blight' %}
+     <p>This is a tomato plant with late blight disease with the confidence of {{ context_g.confidence }}</p> 
+{% elif context_g.label|lower == 'tomato_early_blight' %}
+     <p>This is a tomato plant with early blight disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato_bacterial_spot' %}
+     <p>This is a tomato plant with bacterial spot disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato_leaf_mold' %}
+     <p>This is a tomato plant with leaf mold disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato_spider_mites_two_spotted_spider_mite' %}
+     <p>This is a tomato plant with spider mites disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato__tomato_mosaic_virus' %}
+     <p>This is a tomato plant with mosaic virus disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato_septoria_leaf_spot' %}
+     <p>This is a tomato plant with septoria leaf spot disease with the confidence of {{ context_g.confidence }}</p>
+{% elif context_g.label|lower == 'tomato__target_spot' %}
+     <p>This is a tomato plant with target spot disease with the confidence of {{ context_g.confidence }}</p>
+{% endif %}
+
+               
+   
+{% endif %}
+
+
+
+
+
+{% if context_a %}
+    
+<h3 class="mt-3">As per alexnet Network :</h3>
+    
+{% if context_a.label|lower == 'potato___late_blight' %}
+     <p>This is a potato plant with Late blight disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'potato___early_blight' %}
+     <p>This is a potato plant with Early blight disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'potato___healthy' %}
+     <p>This is a healthy potato plant with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato_healthy' %}
+     <p>This is a healthy tomato plant with the confidence of {{ context_a.confidence }}</p> 
+{% elif context_a.label|lower == 'tomato__tomato_yellowleaf__curl_virus' %}
+     <p>This is a tomato plant with yellow leaf curl virus with the confidence of {{ context_a.confidence }}</p> 
+{% elif context_a.label|lower == 'tomato_late_blight' %}
+     <p>This is a tomato plant with late blight disease with the confidence of {{ context_a.confidence }}</p> 
+{% elif context_a.label|lower == 'tomato_early_blight' %}
+     <p>This is a tomato plant with early blight disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato_bacterial_spot' %}
+     <p>This is a tomato plant with bacterial spot disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato_leaf_mold' %}
+     <p>This is a tomato plant with leaf mold disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato_spider_mites_two_spotted_spider_mite' %}
+     <p>This is a tomato plant with spider mites disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato__tomato_mosaic_virus' %}
+     <p>This is a tomato plant with mosaic virus disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato_septoria_leaf_spot' %}
+     <p>This is a tomato plant with septoria leaf spot disease with the confidence of {{ context_a.confidence }}</p>
+{% elif context_a.label|lower == 'tomato__target_spot' %}
+     <p>This is a tomato plant with target spot disease with the confidence of {{ context_a.confidence }}</p>
+{% endif %}
+    
+{% endif %}
+
+
+
+
+
+{% if context_r %}
+       
+<h3 class="mt-3">As per resnet Network :</h3>
+    
+{% if context_r.label|lower == 'potato___late_blight' %}
+     <p>This is a potato plant with Late blight disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'potato___early_blight' %}
+     <p>This is a potato plant with Early blight disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'potato___healthy' %}
+     <p>This is a healthy potato plant with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato_healthy' %}
+     <p>This is a healthy tomato plant with the confidence of {{ context_r.confidence }}</p> 
+{% elif context_r.label|lower == 'tomato__tomato_yellowleaf__curl_virus' %}
+     <p>This is a tomato plant with yellow leaf curl virus with the confidence of {{ context_r.confidence }}</p> 
+{% elif context_r.label|lower == 'tomato_late_blight' %}
+     <p>This is a tomato plant with late blight disease with the confidence of {{ context_r.confidence }}</p> 
+{% elif context_r.label|lower == 'tomato_early_blight' %}
+     <p>This is a tomato plant with early blight disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato_bacterial_spot' %}
+     <p>This is a tomato plant with bacterial spot disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato_leaf_mold' %}
+     <p>This is a tomato plant with leaf mold disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato_spider_mites_two_spotted_spider_mite' %}
+     <p>This is a tomato plant with spider mites disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato__tomato_mosaic_virus' %}
+     <p>This is a tomato plant with mosaic virus disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato_septoria_leaf_spot' %}
+     <p>This is a tomato plant with septoria leaf spot disease with the confidence of {{ context_r.confidence }}</p>
+{% elif context_r.label|lower == 'tomato__target_spot' %}
+     <p>This is a tomato plant with target spot disease with the confidence of {{ context_r.confidence }}</p>
+{% endif %}
+    
+{% endif %}
+
+
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+    <a href="{% url 'logout' %}" class="btn btn-lg btn-secondary">Logout</a>
+</div>
+
+{% endblock %}

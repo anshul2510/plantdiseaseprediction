@@ -1,0 +1,52 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="register-container text-center">
+  <h1>Register</h1>
+
+  <form method="POST" class="register-form">
+    {% csrf_token %}
+    <div class="mb-3">
+      {{ form.username.label_tag }}
+      {{ form.username }}
+    </div>
+
+    <div class="mb-3">
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+      <ul class="password-info">
+        <li>Password should be at least 8 characters long.</li>
+        <li>Password should not be too similar to the username.</li>
+      </ul> 
+    </div>
+
+    <div class="mb-3">
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+    </div>
+
+    <div class="text-center">
+      <input type="submit" class="btn btn-primary" value="Register">
+    </div>
+  </form>
+
+  <p class="text-center">Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</div>
+
+
+<style>
+  .password-info {
+    color: #dc3545;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  .password-info li {
+    margin-bottom: 5px;
+  }
+</style>
+
+{% endblock %}

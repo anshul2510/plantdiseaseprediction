@@ -1,0 +1,50 @@
+{% extends 'main.html' %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mb-4 text-center">CNN Models</h1>
+
+    <p class="text-center">Click on the links below to access the Interactive CNN models individually and get more detailed predictions:</p>
+
+    <div class="list-group">
+        <a href="{{ xception}}"  class="list-group-item list-group-item-action">Xception Model</a>
+        <a href="{{ densenet }}"  class="list-group-item list-group-item-action">Densenet Model</a>
+        <a href="{{ googlenet }}"  class="list-group-item list-group-item-action">Googlenet Model</a>
+        <a href="{{ alexnet }}"  class="list-group-item list-group-item-action">Alexnet Model</a>
+        <a href="{{ resnet }}"  class="list-group-item list-group-item-action">Resnet Model</a>
+    </div>
+</div>
+
+
+<form class="form-signin mt-4 text-center" method=post enctype=multipart/form-data>
+    {% csrf_token %}
+    <h1 class="h2 mb-3 font-weight-normal">Plant Disease Predicter</h1>
+    <h2 class="h4 mb-3 font-weight-normal">Please Upload The Image of tomato or potato leaf</h2>
+    <input type="file" name="file" class="form-control-file" id="inputfile"  onchange="preview_image(event)">
+    <br />
+    
+        <img id="output-image" class="rounded mx-auto d-block mt-3">
+    
+    <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Predict</button>
+    
+
+</form>
+
+<div class="d-flex justify-content-center mt-3">
+    <a href="{% url 'logout' %}" class="btn btn-lg btn-secondary">Logout</a>
+</div>
+
+
+<script type="text/javascript">
+    function preview_image(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('output-image')
+            output.src = reader.result;
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+</script>
+
+{% endblock %}
